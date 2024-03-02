@@ -37,3 +37,16 @@ precioSpan.innerHTML = Intl.NumberFormat('es-CL', {
     currencySign:'accounting',
     maximumSignificantDigits:2,
 }).format(precio);
+
+function calcularMontoTotal(cantidad, precio) {
+    const amount = Number(cantidad);
+    const price = Number(precio);
+    const total = price * amount;
+  
+    return new Intl.NumberFormat("es-CL", {
+      style: "currency",
+      currency: "CLP",
+      currencySign:'accounting',
+    maximumSignificantDigits:2,
+    }).format(total);
+  }
